@@ -12,6 +12,8 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.KeyEvent;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ArrayAdapter;
@@ -19,6 +21,7 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.MultiAutoCompleteTextView;
@@ -30,13 +33,15 @@ import android.widget.ToggleButton;
 public class MainActivity extends Activity implements OnClickListener {
     private RadioGroup rg;
     final String TAG = "TAG";
-    private Button btn1;
-    private Button btn2;
+//    private Button btn1;
+//    private Button btn2;
     private Context Mcontext;
     private TextView textView;
 
     private Button btnOne;
+    private EditText myInput;
 
+    private ImageView imgBg;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -44,10 +49,32 @@ public class MainActivity extends Activity implements OnClickListener {
         setContentView(R.layout.activity_main);
         Log.i(TAG, "MainActivity --> onCreate");
 
-        btnOne = (Button) findViewById(R.id.btn1);
+//        btnOne = (Button) findViewById(R.id.btn1);
+//        myInput = (EditText) findViewById(R.id.myInput);
 //        第二种方法
-        textView = (TextView) findViewById(R.id.textViewShowData);
+//        textView = (TextView) findViewById(R.id.textViewShowData);
 //        btnOne.setOnClickListener(this);
+
+//        myInput.setOnKeyListener(new View.OnKeyListener() {
+//            @Override
+//            public boolean onKey(View view, int i, KeyEvent keyEvent) {
+//                if(keyEvent.getAction() == KeyEvent.ACTION_DOWN){
+//                    Log.i(TAG, "监听器的onKeyDown方法被调用");
+//                }
+//                return false;
+//            }
+//        });
+//
+//        imgBg = (ImageView) findViewById(R.id.imgBg);
+//        imgBg.setOnTouchListener(new View.OnTouchListener() {
+//            @Override
+//            public boolean onTouch(View view, MotionEvent motionEvent) {
+//                Toast.makeText(getApplicationContext(), "通过监听器触摸图片", Toast.LENGTH_LONG).show();
+//                return true;
+//            }
+//        });
+
+
 
     }
 
@@ -60,6 +87,14 @@ public class MainActivity extends Activity implements OnClickListener {
 //    自定义一个方法
     public void myClick(View source){
         Toast.makeText(getApplicationContext(), "你点击了按钮", Toast.LENGTH_SHORT).show();
+    }
+
+// 从上面的运行结果,我们就可以知道,传播的顺序是:
+// 监听器--->view组件的回调方法--->Activity的回调方法了;
+    public boolean onKeyDown(int keyCode, KeyEvent event){
+        super.onKeyDown(keyCode, event);
+        Log.i(TAG, "Activity的onkeydown方法被调用");
+        return false;
     }
 
 }

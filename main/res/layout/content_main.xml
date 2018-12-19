@@ -2,7 +2,7 @@
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/content_main"
+    android:id="@+id/content_main2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
@@ -151,26 +151,49 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <Button
-            android:id="@+id/btnOpen1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="第一种方式启动" />
-        <Button
-            android:id="@+id/btnOpen2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="第二种方式启动" />
+        <!--<Button-->
+            <!--android:id="@+id/btnOpen1"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="第一种方式启动" />-->
+        <!--<Button-->
+            <!--android:id="@+id/btnOpen2"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="第二种方式启动" />-->
         <TextView
             android:id="@+id/textViewShowData"
             android:layout_width="wrap_content"
             android:text="show data from demo activity"
             android:layout_height="wrap_content" />
-        <Button
-            android:id="@+id/btn1"
+        <!--<Button-->
+            <!--android:id="@+id/btn1"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:onClick="myClick"-->
+            <!--android:text="按钮"/>-->
+        <tk.yunheke.whereismycar.MyButton
+            android:id="@+id/btnTwo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="myClick"
-            android:text="按钮"/>
+            android:text="自定义按钮"
+            />
+
+        <!--<tk.yunheke.whereismycar.myview.MyInput-->
+            <!--android:id="@+id/myInput"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_span="4"-->
+            <!--android:hint="自定义输入框"-->
+            <!--android:text="" />-->
+        <!--<ImageView-->
+            <!--android:id="@+id/imgBg"-->
+            <!--android:layout_width="100dp"-->
+            <!--android:layout_height="100dp"-->
+            <!--android:background="@drawable/bg"/>-->
+
+        <tk.yunheke.whereismycar.myview.MyRound
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
     </LinearLayout>
 </TableLayout>
